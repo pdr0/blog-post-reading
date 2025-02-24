@@ -4,4 +4,5 @@ module.exports = {
   rules: {
     'prettier/prettier': 'error',
   },
+  ignorePatterns: ['app/components/__tests__/**']
 };

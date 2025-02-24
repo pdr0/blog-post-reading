@@ -1,6 +1,6 @@
 import { useLocalSearchParams } from 'expo-router';
 import { View, Text, FlatList, StyleSheet } from 'react-native';
-import { Comment } from '@/components/Comment/Comment';
+import Comment from '@/components/Comment';
 
 export default function PostScreen() {
     const { title, blogger, body, comments } = useLocalSearchParams();
@@ -19,7 +19,7 @@ export default function PostScreen() {
             <Text style={styles.commentsTitle}>Comments:</Text>
             <FlatList
                 data={parsedComments}
-                keyExtractor={(item) => item.id}
+                keyExtractor={(item) => item.id.toString()}
                 renderItem={({ item }) => (
                     <Comment name={item.name} email={item.email} body={item.body} id={item.id} postId={item.postId} />
                 )}

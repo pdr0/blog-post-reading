@@ -1,25 +1,24 @@
 import React from 'react';
-import { View, Image, StyleSheet, SafeAreaView, Platform, TouchableOpacity } from 'react-native';
+import { Image, StyleSheet, SafeAreaView, Platform, Pressable, StatusBar } from 'react-native';
 import { Link } from 'expo-router';
+import { ThemedView } from '@/components/ThemedView';
 
 const Header = () => {
     return (
         <SafeAreaView style={styles.container}>
-            <View style={styles.header}>
-                {Platform.OS === 'web' ? (
-                    <Link href="/" asChild>
+            <ThemedView style={styles.header}>
+                <Link href="/" asChild>
+                    {Platform.OS === 'web' ? (
                         <a style={{ display: 'flex' }}>
-                            <Image source={require('../assets/images/logo.png')} style={styles.logo} />
+                            <Image testID="header-logo" source={require('../assets/images/logo.png')} style={styles.logo} />
                         </a>
-                    </Link>
-                ) : (
-                    <Link href="/" asChild>
-                        <TouchableOpacity>
-                            <Image source={require('../assets/images/logo.png')} style={styles.logo} />
-                        </TouchableOpacity>
-                    </Link>
-                )}
-            </View>
+                    ) : (
+                        <Pressable>
+                            <Image testID="header-logo" source={require('../assets/images/logo.png')} style={styles.logo} />
+                        </Pressable>
+                    )}
+                </Link>
+            </ThemedView>
         </SafeAreaView>
     );
 };
@@ -27,7 +26,7 @@ const Header = () => {
 const styles = StyleSheet.create({
     container: {
         backgroundColor: '#fff',
-        paddingTop: Platform.OS === 'android' ? 25 : 0,
+        paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0,
     },
     header: {
         flexDirection: 'row',
