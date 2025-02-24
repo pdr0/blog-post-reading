@@ -92,7 +92,7 @@ const styles = StyleSheet.create({
     nameContainer: {paddingBottom: 10, paddingTop: 10},
     name: {fontSize: 20, fontWeight: "light", textDecorationLine: 'underline'},
     loaderContainer: {flex: 1, justifyContent: 'center', alignItems: 'center'},
-    userContainer: {padding: 10, borderBottomWidth: 1, borderBottomColor: '#ddd', paddingVertical: 30},
+    userContainer: {padding: 10, borderBottomWidth: 1, borderBottomColor: '#ddd', paddingVertical: 30, maxWidth: 800},
     error: {color: 'red', textAlign: 'center', marginTop: 20},
     loader: {height: 200, width: 200},
 });
