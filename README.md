@@ -23,6 +23,8 @@ Blogify is built using the following technologies:
    ```bash
    npm run bootstrap
    ```
+2. Press `w` to run the instance in a browser once everything has been installed and started.
+
 
 You'll have options to open the app in a:
 
