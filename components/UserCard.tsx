@@ -1,8 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet, Linking, TouchableOpacity } from 'react-native';
 
-// Define the UserType
-export type UserType = {
+export type UserCardPropsType = {
     id: number;
     name: string;
     username: string;
@@ -26,8 +25,7 @@ export type UserType = {
     };
 };
 
-// UserCard Component
-const UserCard: React.FC<{ user: UserType }> = ({ user }) => {
+function UserCard(user : UserCardPropsType) {
     const openMap = () => {
         const url = `https://www.google.com/maps/search/?api=1&query=${user.address.geo.lat},${user.address.geo.lng}`;
         Linking.openURL(url);
@@ -56,7 +54,7 @@ const UserCard: React.FC<{ user: UserType }> = ({ user }) => {
             </View>
         </View>
     );
-};
+}
 
 const styles = StyleSheet.create({
     card: {

@@ -1,20 +1,17 @@
 import { renderHook, waitFor } from '@testing-library/react-native';
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import {QueryClient, QueryClientProvider} from '@tanstack/react-query';
 import { useGetComments } from '@/hooks/useGetComments';
 import dataProvider from '@/utils/dataRESTProvider';
 import type { CommentType } from '@/types';
 
-// Mock data provider
 jest.mock('@/utils/dataRESTProvider');
 const mockFetchComments = dataProvider.fetchComments as jest.MockedFunction<typeof dataProvider.fetchComments>;
 
-// Create a QueryClient for React Query
 const queryClient = new QueryClient();
 
-const wrapper = ({ children }: { children: React.ReactNode }) => (
+const wrapper = ({ children }) => (
     <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
-);
-
+)
 
 describe('useGetComments Hook', () => {
     afterEach(() => {

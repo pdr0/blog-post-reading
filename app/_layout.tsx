@@ -1,13 +1,13 @@
+import {useEffect} from 'react';
 import {DarkTheme, DefaultTheme, ThemeProvider} from '@react-navigation/native';
-import {useFonts} from 'expo-font';
+import 'react-native-reanimated';
 import {Stack} from 'expo-router';
+import {useFonts} from 'expo-font';
 import Header from '@/components/Header';
 import * as SplashScreen from 'expo-splash-screen';
 import {StatusBar} from 'expo-status-bar';
-import {useEffect} from 'react';
-import {BlogDataProvider} from "@/contexts/blogDataPovider";
 
-import 'react-native-reanimated';
+import {BlogDataProvider} from "@/contexts/blogDataPovider";
 import {QueryClient, QueryClientProvider} from '@tanstack/react-query';
 
 import {useColorScheme} from '@/hooks/useColorScheme';

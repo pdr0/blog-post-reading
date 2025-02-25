@@ -1,50 +1,71 @@
-# Welcome to your Expo app 👋
+# ![Blogify Logo](https://main.d331yi1p7vboi5.amplifyapp.com/assets/assets/images/logo.04aee1113800c61583d4f4497ab59efd.png)
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Blogify is a intuitive blogging platform built with [Expo](https://expo.dev). This project was created using [`create-expo-app`](https://www.npmjs.com/package/create-expo-app), making it easy to develop and deploy for web and iOS.
 
-## Get started
+## Tech Stack
+
+Blogify is built using the following technologies:
+
+- **React Native & Expo** – For building cross-platform mobile and web applications
+- **React Navigation** – For handling navigation in the app
+- **TanStack React Query** – For efficient state and data management
+- **Axios** – For making HTTP requests
+- **React Testing Library** – For testing UI components
+- **Jest & Jest-Expo** – For running unit and integration tests
+- **ESLint** – For maintaining code quality and consistency
+- **Prettier** – For code formatting
+- **TypeScript** – For static typing and improved developer experience
+
+## Get Started
 
 1. Install dependencies
 
    ```bash
-   npm install
+   npm install --legacy-peer-deps
    ```
 
 2. Start the app
 
    ```bash
-    npx expo start
+   npx expo start
    ```
 
-In the output, you'll find options to open the app in a
+You'll have options to open the app in a:
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
+- [Development build](https://docs.expo.dev/develop/development-builds/introduction/)
 - [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
 - [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+You can start developing by editing the files inside the **app** directory. Blogify uses [file-based routing](https://docs.expo.dev/router/introduction/) for seamless navigation.
 
-## Get a fresh project
+## Available Scripts
 
-When you're ready, run:
+The following scripts are available for development and testing:
 
-```bash
-npm run reset-project
+```json
+"start": "expo start",
+"reset-project": "node ./scripts/reset-project.js",
+"ios": "expo start --ios",
+"web": "expo start --web",
+"test": "jest --watchAll",
+"lint": "expo lint",
+"build:web": "expo export -p web"
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## Deployment
 
-## Learn more
+Blogify is deployed on AWS Amplify. You can access the live application at:
 
-To learn more about developing your project with Expo, look at the following resources:
+🔗 [Blogify on AWS Amplify](https://main.d331yi1p7vboi5.amplifyapp.com/)
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+## Features
 
-## Join the community
+- Responsive design for a smooth experience on web and iOS
+- Dark mode support
 
-Join our community of developers creating universal apps.
+## Missing Features (To Be Added)
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+- **PWA Support with Service Workers** – Enable Progressive Web App (PWA) capabilities, allowing offline access, improved performance, and an app-like experience on the web.
+- **More test coverage** – More tests means more quality.
+- **Logging and monitoring** – Logging and monitoring for better error handling and improvements.
+

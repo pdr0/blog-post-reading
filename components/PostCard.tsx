@@ -4,17 +4,16 @@ import {StyleSheet, FlatList} from "react-native";
 import type {PostType, CommentType, UserType} from "@/types";
 import {ThemedView} from "@/components/ThemedView";
 import {ThemedText} from "@/components/ThemedText";
+import Comment from "@/components/Comment";
 import {Link} from "expo-router";
 
-interface PostCardProps {
+type PostCardProps = {
     post: PostType;
     comments: CommentType[]
     user: UserType
 }
 
-// PostCard Component
-const PostCard: React.FC<PostCardProps> = ({post, comments, user}) => {
-
+function PostCard ({post, comments, user}: PostCardProps){
     return (
         <ThemedView style={styles.card}>
             <ThemedText style={styles.title}>{post.title}</ThemedText>
@@ -29,7 +28,6 @@ const PostCard: React.FC<PostCardProps> = ({post, comments, user}) => {
 
             </Link>
 
-
             <ThemedText style={styles.commentHeader}>Comments</ThemedText>
 
             <FlatList
@@ -38,11 +36,7 @@ const PostCard: React.FC<PostCardProps> = ({post, comments, user}) => {
                 keyExtractor={(item) => item.id.toString()}
                 scrollEnabled={true}
                 renderItem={({item}) => (
-                    <ThemedView style={styles.comment}>
-                        <ThemedText style={styles.commentName}>{item.name}:</ThemedText>
-                        <ThemedText style={styles.commentBody}>{item.body}</ThemedText>
-                        <ThemedText style={styles.commentEmail}>{item.email}</ThemedText>
-                    </ThemedView>
+                    <Comment name={item.name} body={item.body} email={item.email} />
                 )}
             />
         </ThemedView>

@@ -7,11 +7,10 @@ import {ThemedText} from "@/components/ThemedText";
 type PostEntryProps = {
     title: string;
     postId: number;
-    userId: number;
     body: string
 }
 
-export function PostEntry({title, postId, userId, body}: PostEntryProps) {
+export function PostEntry({title, postId, body}: PostEntryProps) {
     const {data: commentsData} = useGetComments(postId);
     const commentsCount = commentsData? commentsData.length : 0;
 

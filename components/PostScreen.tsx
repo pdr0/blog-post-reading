@@ -8,17 +8,14 @@ const { width } = Dimensions.get('window');
 export default function PostScreen() {
     const { title, blogger, body, comments } = useLocalSearchParams();
 
-    // Parse the comments from the URL params (they are JSON-encoded)
     const parsedComments = comments ? JSON.parse(comments as string) : [];
 
     return (
         <ThemedView style={styles.container}>
-            {/* Post Content */}
             <Text style={styles.title}>{title}</Text>
             <Text style={styles.blogger}>By {blogger}</Text>
             <Text style={styles.body}>{body}</Text>
 
-            {/* Comments Section */}
             <Text style={styles.commentsTitle}>Comments:</Text>
             <FlatList
                 data={parsedComments}
@@ -28,9 +25,7 @@ export default function PostScreen() {
                         name={item.name}
                         email={item.email}
                         body={item.body}
-                        id={item.id}
-                        postId={item.postId}
-                        style={styles.commentContainer}
+                        key={item.id}
                     />
                 )}
                 horizontal

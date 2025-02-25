@@ -10,7 +10,7 @@ export type CommentPropsType = {
     email: string;
 };
 
-const Comment: React.FC<CommentPropsType> = ({ name, body, email }) => {
+function Comment ({ name, body, email }: CommentPropsType) {
     return (
         <ThemedView style={styles.comment}>
             <ThemedText style={styles.commentName}>{name}:</ThemedText>

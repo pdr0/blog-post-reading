@@ -9,7 +9,6 @@ import {PostEntry} from "@/components/PostEntry";
 import {useBlogData} from "@/contexts/blogDataPovider";
 import {PostsByUserType} from "@/types";
 
-
 export default function PostsView() {
     const {setPostsByUser} = useBlogData();
     const [usersQuery, postsQuery] = useQueries({
@@ -74,8 +73,7 @@ export default function PostsView() {
                                     params: {postId: post.id}
                                 }}
                             >
-                                <PostEntry title={post.title} postId={post.id} userId={post.userId}
-                                               body={post.body}/>
+                                <PostEntry title={post.title} postId={post.id} body={post.body}/>
                             </Link>
                         }
                     >

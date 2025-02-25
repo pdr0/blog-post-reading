@@ -1,7 +1,7 @@
 import React from 'react';
-import { Image, StyleSheet, SafeAreaView, Platform, Pressable, StatusBar } from 'react-native';
 import { Link } from 'expo-router';
 import { ThemedView } from '@/components/ThemedView';
+import { Image, StyleSheet, SafeAreaView, Platform, Pressable, StatusBar } from 'react-native';
 
 const Header = () => {
     return (

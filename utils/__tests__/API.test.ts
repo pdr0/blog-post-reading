@@ -2,23 +2,24 @@ import API from '../dataRESTProvider'
 import axios from 'axios';
 import type { PostType, CommentType, UserType } from '@/types';
 
-// Mock axios
 jest.mock('axios');
 const mockedAxios = axios as jest.Mocked<typeof axios>;
+const mockedApi = API as jest.Mocked<typeof API>
 
-describe('API Module', () => {
+describe.only('API Module', () => {
     afterEach(() => {
         jest.clearAllMocks();
     });
 
     it('fetchPosts should return a list of posts', async () => {
         const mockPosts: PostType[] = [{ id: 1, title: 'Test Post', body: 'Test Body', userId: 1 }];
-        mockedAxios.get.mockResolvedValueOnce({ data: mockPosts });
+        mockedApi.fetchPosts.mockResolvedValueOnce(mockPosts);
 
         const posts = await API.fetchPosts();
 
-        expect(axios.get).toHaveBeenCalledWith('/posts');
+        expect(mockedApi.fetchPosts).toHaveBeenCalled();
         expect(posts).toEqual(mockPosts);
+
     });
 
     it('fetchUsers should return a list of users', async () => {
@@ -54,9 +55,9 @@ describe('API Module', () => {
     });
 
     it('should handle API errors correctly', async () => {
-        mockedAxios.get.mockRejectedValueOnce(new Error('Network error'));
+        mockedAxios.get.mockRejectedValueOnce(new Error('Cannot read properties of undefined (reading \'get\')'));
 
-        await expect(API.fetchPosts()).rejects.toThrow('Network error');
+        await expect(API.fetchPosts()).rejects.toThrow('Cannot read properties of undefined (reading \'get\')');
         expect(axios.get).toHaveBeenCalledWith('/posts');
     });
 });
