@@ -18,16 +18,10 @@ Blogify is built using the following technologies:
 
 ## Get Started
 
-1. Install dependencies
+1. Install dependencies and start the application
 
    ```bash
-   npm install --legacy-peer-deps
-   ```
-
-2. Start the app
-
-   ```bash
-   npx expo start
+   npm run bootstrap
    ```
 
 You'll have options to open the app in a:
@@ -35,6 +29,8 @@ You'll have options to open the app in a:
 - [Development build](https://docs.expo.dev/develop/development-builds/introduction/)
 - [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
 - [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+
+The app is written mainly to target web but it works in iOS and Android as well.
 
 You can start developing by editing the files inside the **app** directory. Blogify uses [file-based routing](https://docs.expo.dev/router/introduction/) for seamless navigation.
 
