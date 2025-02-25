@@ -3,6 +3,7 @@
   "main": "expo-router/entry",
   "version": "1.0.0",
   "scripts": {
+    "bootstrap": "npm i --legacy-peer-deps && npm run start",
     "start": "expo start",
     "reset-project": "node ./scripts/reset-project.js",
     "ios": "expo start --ios",
