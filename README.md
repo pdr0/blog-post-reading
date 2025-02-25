@@ -48,8 +48,9 @@ The following scripts are available for development and testing:
 "ios": "expo start --ios",
 "web": "expo start --web",
 "test": "jest --watchAll",
+"test:coverage": "jest --coverage=true",
 "lint": "expo lint",
-"build:web": "expo export -p web"
+"build:web": "expo export -p web "
 ```
 
 ## Deployment
